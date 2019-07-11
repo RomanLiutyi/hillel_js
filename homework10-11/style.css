@@ -1,0 +1,105 @@
+.root{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: rgb(129, 201, 129);
+}
+.card{
+    margin: 20px;
+    border: 3px solid rgb(83, 87, 73);
+    border-radius: 15px;
+    padding: 20px;
+    width: 200px;
+    background: rgb(93, 97, 92);
+    transition: all .7s;
+}
+.health{
+    text-transform: uppercase;
+    color: antiquewhite;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    box-sizing: border-box;
+    text-align: right;
+    background-color: rgb(89, 168, 89) ;
+    height: 20px
+}
+.distance{
+    text-transform: uppercase;
+    color: antiquewhite;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    box-sizing: border-box;
+    /* border-radius: 10px; */
+    text-align: right;
+    height: 20px;
+    background-color: #F90 ;
+}
+.type{
+    text-transform: uppercase;
+    text-align: center;
+    color: antiquewhite;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 10px;
+    font-size: 20px;
+    transition: color .7s;
+}
+.img{
+    position: relative;
+    z-index: 2;
+    border: 5px solid rgb(45, 56, 16);
+    background-size: cover;
+    background-position: center;
+    height: 150px;
+    margin-bottom: 20px;
+    transition: all .7s;
+}
+.img__tank{
+    background-image: url(http://cdn-frm-eu.wargaming.net/wot/ru/uploads/monthly_04_2018/post-62079957-0-48045000-1524722138.jpg);
+    background-size: cover;
+    height: 150px;
+}
+.img__air{
+    background-image: url(https://steamuserimages-a.akamaihd.net/ugc/548680779279864453/D57546460CCE900B21B620AE5587450FCDE5E410/);
+    
+}
+.img__water{
+    background-image: url(https://i.pinimg.com/originals/36/ff/6e/36ff6e4dfccdea71f3b5db67f3cf67cd.jpg);
+}
+
+.maxDistance, .maxHealth{
+    position: relative;
+    background-color: #f35;
+    margin-bottom: 10px;
+}
+.info__text{
+    position: absolute;
+    color: azure;
+    font-weight: 900;
+    right: 10px;
+}
+.btn__box{
+    display: flex;
+    justify-content: space-between;
+}
+.btn{
+    width: 45%;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+.btn:hover{
+    background-color: rgba(55, 63, 63, 0.7);
+    color: azure;
+}
+.card:hover{
+    box-shadow: 10px 8px 3px rgb(19, 155, 71);
+    background: rgb(255, 255, 222);
+}
+.card:hover .type{
+    color: black;
+}
+.card:hover .img{
+    border: 5px solid rgb(200,200,200);
+}
+.card:hover .root{
+    background-color: rgb(29, 21, 29);
+}
