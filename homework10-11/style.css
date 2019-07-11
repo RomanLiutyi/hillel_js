@@ -4,13 +4,16 @@
     justify-content: center;
     background-color: rgb(129, 201, 129);
 }
+.mask{
+    opacity: .3;
+}
 .card{
     margin: 20px;
     border: 3px solid rgb(83, 87, 73);
     border-radius: 15px;
     padding: 20px;
     width: 200px;
-    background: rgb(93, 97, 92);
+    background: rgb(223, 227, 222);
     transition: all .7s;
 }
 .health{
@@ -37,7 +40,6 @@
 .type{
     text-transform: uppercase;
     text-align: center;
-    color: antiquewhite;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin-bottom: 10px;
     font-size: 20px;
@@ -90,16 +92,13 @@
     background-color: rgba(55, 63, 63, 0.7);
     color: azure;
 }
-.card:hover{
+/* .card:hover{
     box-shadow: 10px 8px 3px rgb(19, 155, 71);
     background: rgb(255, 255, 222);
-}
+} */
 .card:hover .type{
     color: black;
 }
 .card:hover .img{
     border: 5px solid rgb(200,200,200);
-}
-.card:hover .root{
-    background-color: rgb(29, 21, 29);
 }

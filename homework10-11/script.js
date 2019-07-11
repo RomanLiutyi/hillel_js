@@ -24,7 +24,7 @@ function Squad(defaultResource){
   defaultResource ? this.squad = defaultResource : []
 }
 var resource = [
-  new MilitaryResource('tank', 1000, 4822),
+  new MilitaryResource('tank', 100, 4822),
   new MilitaryResource('water', 900, 555),
   new MilitaryResource('air', 800, 100),
   new MilitaryResource('water', 500, 888)
@@ -70,12 +70,15 @@ function card(object){
       document.getElementsByClassName('card')[i].innerHTML += '<div class="btn__box"></div>'
       document.getElementsByClassName('btn__box')[i].innerHTML += '<input type="button" value="atack" class="btn btn--atack" id="atack_unit'+ [i] +'" >'
       document.getElementsByClassName('btn__box')[i].innerHTML += '<input type="button" value="walk" class="btn btn--walk" id="walk_unit'+ [i] +'" >';
+      if (object[i].distance >= object[i].maxDistance){
+        document.getElementsByClassName('card')[i].classList.toggle("mask");
+        }
     }
   }
   for (const i in object) {
     if (object.hasOwnProperty(i)) {
-    document.getElementById('atack_unit'+[i]).addEventListener('click', function(){
-      object[i].health >= 0.1*object[i].maxHealth ? object[i].health -= 0.1*object[i].maxHealth : object[i].health = 0;
+      document.getElementById('atack_unit'+[i]).addEventListener('click', function(){
+      object[i].health >= 0.1*object[i].maxHealth ? object[i].health -= 0.1*object[i].maxHealth : ( object.splice(object.indexOf(i), 1));
       card(object);
       })
     }
@@ -83,7 +86,9 @@ function card(object){
   for (const i in object) {
     if (object.hasOwnProperty(i)) {
     document.getElementById('walk_unit'+[i]).addEventListener('click', function(){
-      object[i].distance <= 0.9*object[i].maxDistance ? object[i].distance += 0.1*object[i].maxDistance : object[i].distance = object[i].maxDistance;
+      object[i].distance <= 0.9*object[i].maxDistance ?
+        object[i].distance += 0.1*object[i].maxDistance :
+          object[i].distance = object[i].maxDistance;
       card(object);
       })
     }
